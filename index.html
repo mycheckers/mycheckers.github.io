@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkers English - Play Free Online</title>
+    <meta name="description" content="Play Checkers English online for free. Classic board game with multiplayer, friends mode, and clean dark interface. No download required.">
+    
+    <style>
+        /* ОСНОВНЫЕ ЦВЕТА ИГРЫ (Dark Mode) */
+        :root {
+            --bg-color: #121214;       /* Очень темный фон, почти черный */
+            --panel-color: #1c1c1f;    /* Цвет панелей */
+            --accent-purple: #6200ea;  /* Фиолетовый как на кнопках */
+            --text-color: #e0e0e0;     /* Белый текст */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ШАПКА САЙТА */
+        header {
+            background-color: var(--panel-color);
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: #a78bfa; /* Светло-фиолетовый акцент в тексте */
+        }
+
+        /* ГЛАВНЫЙ КОНТЕЙНЕР (Баннер - Игра - Баннер) */
+        .main-layout {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 30px 10px;
+            flex-grow: 1; /* Растягивает блок на всю высоту */
+        }
+
+        /* БОКОВЫЕ БАННЕРЫ (AdinPlay) */
+        .ad-space {
+            width: 160px;
+            height: 600px;
+            background-color: #252529;
+            border: 1px dashed #444;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        /* КОНТЕЙНЕР ДЛЯ ИФРЕЙМА */
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 960px; /* Оптимальная ширина для игры */
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            /* Фиолетовое свечение вокруг игры, чтобы выделить её */
+            box-shadow: 0 0 20px rgba(98, 0, 234, 0.15); 
+            border: 1px solid #333;
+        }
+
+        /* САМ IFRAME */
+        iframe {
+            width: 100%;
+            height: 700px; /* Сделал повыше, так как у тебя меню вертикальное */
+            border: none;
+            display: block;
+        }
+
+        /* ОПИСАНИЕ (SEO) */
+        .description-section {
+            background-color: var(--panel-color);
+            margin: 0 auto 40px auto;
+            max-width: 1000px;
+            padding: 30px;
+            border-radius: 12px;
+            line-height: 1.6;
+            color: #bbb;
+        }
+
+        .description-section h2 {
+            color: #fff;
+            border-bottom: 2px solid var(--accent-purple);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #0d0d0d;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #666;
+            margin-top: auto;
+        }
+
+        /* АДАПТИВНОСТЬ (МОБИЛЬНЫЕ) */
+        @media (max-width: 1350px) {
+            /* Скрываем боковые баннеры на экранах меньше 1350px */
+            .ad-space {
+                display: none; 
+            }
+            .game-container {
+                max-width: 100%;
+            }
+            iframe {
+                height: 80vh; /* На мобилках игра на почти весь экран */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Checkers <span>English</span></h1>
+    </header>
+
+    <div class="main-layout">
+        
+        <div class="ad-space" id="ad-left">
+            Ad Space<br>160x600
+        </div>
+
+        <div class="game-container">
+            <iframe src="https://script.google.com/macros/s/AKfycbyw-dMd-lkM9fKoA3miVk79kTEw-PafbxSXiFSMf6BTwyJVPjlquO2EWmCRrLpODlZvag/exec" allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+        </div>
+
+        <div class="ad-space" id="ad-right">
+            Ad Space<br>160x600
+        </div>
+
+    </div>
+
+    <div class="description-section">
+        <h2>About the Game</h2>
+        <p>
+            Welcome to <strong>Checkers English</strong>, the ultimate online destination for strategy board game enthusiasts. 
+            Enjoy a sleek, modern interface with a dark theme designed for comfortable gameplay day or night.
+        </p>
+        <h3>How to Play</h3>
+        <p>
+            The game follows standard English Draughts rules. Pieces move diagonally forward. 
+            Capture your opponent's pieces by jumping over them. Reach the opposite end of the board to become a King.
+            Challenge the computer or play with friends online!
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Checkers English. Hosted on GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
