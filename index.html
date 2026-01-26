@@ -7,12 +7,12 @@
     <meta name="description" content="Play Checkers English online for free. Classic board game with multiplayer, friends mode, and clean dark interface. No download required.">
     
     <style>
-        /* ОСНОВНЫЕ ЦВЕТА ИГРЫ (Dark Mode) */
+        /* --- ЦВЕТОВАЯ СХЕМА (Dark Mode) --- */
         :root {
-            --bg-color: #121214;       /* Очень темный фон, почти черный */
-            --panel-color: #1c1c1f;    /* Цвет панелей */
-            --accent-purple: #6200ea;  /* Фиолетовый как на кнопках */
-            --text-color: #e0e0e0;     /* Белый текст */
+            --bg-color: #121214;       /* Фон страницы */
+            --panel-color: #1c1c1f;    /* Фон панелей */
+            --accent-purple: #6200ea;  /* Фиолетовый акцент */
+            --text-color: #e0e0e0;     /* Цвет текста */
         }
 
         body {
@@ -26,7 +26,7 @@
             min-height: 100vh;
         }
 
-        /* ШАПКА САЙТА */
+        /* --- ШАПКА --- */
         header {
             background-color: var(--panel-color);
             padding: 15px 20px;
@@ -44,27 +44,27 @@
         }
 
         h1 span {
-            color: #a78bfa; /* Светло-фиолетовый акцент в тексте */
+            color: #a78bfa; /* Светлый фиолетовый для слова English */
         }
 
-        /* ГЛАВНЫЙ КОНТЕЙНЕР (Баннер - Игра - Баннер) */
+        /* --- ОСНОВНОЙ БЛОК --- */
         .main-layout {
             display: flex;
             justify-content: center;
             align-items: flex-start;
             gap: 20px;
             padding: 30px 10px;
-            flex-grow: 1; /* Растягивает блок на всю высоту */
+            flex-grow: 1;
         }
 
-        /* БОКОВЫЕ БАННЕРЫ (AdinPlay) */
+        /* --- БАННЕРЫ (Скрыты пока не одобрит AdinPlay) --- */
         .ad-space {
             width: 160px;
             height: 600px;
             background-color: #252529;
             border: 1px dashed #444;
             border-radius: 8px;
-            display: flex;
+            display: none; /* <--- СКРЫТО. Измени на display: flex, когда дадут рекламу */
             align-items: center;
             justify-content: center;
             color: #555;
@@ -72,28 +72,26 @@
             flex-shrink: 0;
         }
 
-        /* КОНТЕЙНЕР ДЛЯ ИФРЕЙМА */
+        /* --- КОНТЕЙНЕР ИГРЫ --- */
         .game-container {
             position: relative;
             width: 100%;
-            max-width: 960px; /* Оптимальная ширина для игры */
+            max-width: 960px; 
             background: #000;
             border-radius: 12px;
             overflow: hidden;
-            /* Фиолетовое свечение вокруг игры, чтобы выделить её */
-            box-shadow: 0 0 20px rgba(98, 0, 234, 0.15); 
+            box-shadow: 0 0 20px rgba(98, 0, 234, 0.15); /* Фиолетовое свечение */
             border: 1px solid #333;
         }
 
-        /* САМ IFRAME */
         iframe {
             width: 100%;
-            height: 700px; /* Сделал повыше, так как у тебя меню вертикальное */
+            height: 720px; /* Высота под интерфейс игры */
             border: none;
             display: block;
         }
 
-        /* ОПИСАНИЕ (SEO) */
+        /* --- ТЕКСТОВОЕ ОПИСАНИЕ (SEO) --- */
         .description-section {
             background-color: var(--panel-color);
             margin: 0 auto 40px auto;
@@ -102,6 +100,7 @@
             border-radius: 12px;
             line-height: 1.6;
             color: #bbb;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         .description-section h2 {
@@ -112,6 +111,25 @@
             margin-top: 0;
         }
 
+        .description-section h3, .description-section h4 {
+            color: #fff;
+            margin-top: 25px;
+        }
+
+        .description-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .description-section li {
+            margin-bottom: 10px;
+        }
+
+        .description-section strong {
+            color: #e0e0e0;
+        }
+
+        /* --- ПОДВАЛ --- */
         footer {
             background-color: #0d0d0d;
             text-align: center;
@@ -119,19 +137,19 @@
             font-size: 13px;
             color: #666;
             margin-top: auto;
+            border-top: 1px solid #222;
         }
 
-        /* АДАПТИВНОСТЬ (МОБИЛЬНЫЕ) */
+        /* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
         @media (max-width: 1350px) {
-            /* Скрываем боковые баннеры на экранах меньше 1350px */
             .ad-space {
-                display: none; 
+                display: none !important; /* Гарантированно скрываем на планшетах */
             }
             .game-container {
                 max-width: 100%;
             }
             iframe {
-                height: 80vh; /* На мобилках игра на почти весь экран */
+                height: 80vh;
             }
         }
     </style>
@@ -145,7 +163,7 @@
     <div class="main-layout">
         
         <div class="ad-space" id="ad-left">
-            Ad Space<br>160x600
+            Ad Space Left
         </div>
 
         <div class="game-container">
@@ -153,27 +171,49 @@
         </div>
 
         <div class="ad-space" id="ad-right">
-            Ad Space<br>160x600
+            Ad Space Right
         </div>
 
     </div>
 
     <div class="description-section">
-        <h2>About the Game</h2>
+        <h2>Welcome to Checkers English</h2>
         <p>
-            Welcome to <strong>Checkers English</strong>, the ultimate online destination for strategy board game enthusiasts. 
-            Enjoy a sleek, modern interface with a dark theme designed for comfortable gameplay day or night.
+            Immerse yourself in the strategic world of <strong>Checkers English</strong> (also known as <em>Draughts</em>). 
+            This isn't just a quick match—it's a test of tactics and foresight where every move counts. 
+            Here, you don't just play; you build a career as a grandmaster.
         </p>
-        <h3>How to Play</h3>
-        <p>
-            The game follows standard English Draughts rules. Pieces move diagonally forward. 
-            Capture your opponent's pieces by jumping over them. Reach the opposite end of the board to become a King.
-            Challenge the computer or play with friends online!
-        </p>
+        
+        <h3>Game Features:</h3>
+        <ul>
+            <li><strong>Competitive Rating System:</strong> Track your progress and fight for the top spot on the global leaderboard.</li>
+            <li><strong>Advanced Profile Statistics:</strong> Analyze your gameplay with detailed data, including win/loss ratios, capture efficiency, and opponent difficulty.</li>
+            <li><strong>Social Interaction:</strong> Use the built-in chat to find opponents, make friends, and discuss strategies with like-minded players.</li>
+        </ul>
+
+        <hr style="border: 0; border-top: 1px solid #333; margin: 30px 0;">
+
+        <h3>Rules of Play</h3>
+        <p>The game follows classic English Draughts rules. Understanding movement and capturing is key to victory.</p>
+
+        <h4>Movement & Capturing</h4>
+        <ul>
+            <li><strong>Simple Checkers:</strong> Move diagonally forward one square.</li>
+            <li><strong>Capturing:</strong> Regular pieces capture forward only. To capture, jump over an opponent's adjacent piece into an empty square behind it.</li>
+            <li><strong>Combo Jumps:</strong> If you can capture another piece after landing, the move continues until no more captures are possible.</li>
+            <li><strong>Choice of Path:</strong> If there are multiple ways to capture (e.g., capture one piece vs. two pieces), the player is free to choose any option.</li>
+        </ul>
+
+        <h4>Kings (Promotion)</h4>
+        <ul>
+            <li><strong>Promotion:</strong> A simple checker becomes a King upon reaching the farthest row of the board.</li>
+            <li><strong>King's Movement:</strong> Kings move diagonally both forward and backward, but only one square at a time.</li>
+            <li><strong>King's Capture:</strong> Kings can capture diagonally both forward and backward. They can also perform multi-jump captures and must continue jumping as long as possible.</li>
+        </ul>
     </div>
 
     <footer>
-        <p>&copy; 2025 Checkers English. Hosted on GitHub Pages.</p>
+        <p>&copy; 2026 Checkers English Online.</p>
     </footer>
 
 </body>
