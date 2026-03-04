@@ -8,8 +8,9 @@
     
     <style>
         :root {
-            --bg-color: #121214;
-            --panel-color: #1c1c1f;
+            /* Подфиолеченный фон и панели */
+            --bg-color: #15111a;
+            --panel-color: #1e1926;
             --accent-purple: #6200ea;
             --text-color: #e0e0e0;
         }
@@ -75,22 +76,22 @@
             font-size: 16px;
         }
 
-        /* --- СТИЛИ ДЛЯ ЛЕВОЙ КОЛОНКИ (Особенности игры) --- */
+        /* --- СТИЛИ ДЛЯ ЛЕВОЙ КОЛОНКИ --- */
         .feature-list {
             padding-left: 15px;
             margin: 0;
         }
         
         .feature-list li {
-            margin-bottom: 22px; /* Идеальный отступ для заполнения высоты */
+            margin-bottom: 22px; 
         }
         .feature-list li:last-child {
             margin-bottom: 0;
         }
 
-        /* --- СТИЛИ ДЛЯ ПРАВОЙ КОЛОНКИ (Лидеры) --- */
+        /* --- СТИЛИ ДЛЯ ПРАВОЙ КОЛОНКИ --- */
         .leader-category {
-            margin-bottom: 35px; /* Идеальный отступ между таблицами */
+            margin-bottom: 35px; 
         }
         
         .leader-category h4 {
@@ -121,6 +122,13 @@
             font-weight: bold;
         }
 
+        /* --- ОБЩИЕ СТИЛИ IFRAME --- */
+        iframe {
+            width: 100%;
+            border: none;
+            display: block;
+        }
+
         .game-container {
             position: relative;
             width: 100%;
@@ -132,11 +140,21 @@
             border: 1px solid #333;
         }
 
-        iframe {
-            width: 100%;
+        .game-container iframe {
             height: 720px;
-            border: none;
-            display: block;
+        }
+
+        /* --- СТИЛИ ДЛЯ ВИДЕО --- */
+        .video-wrapper {
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        
+        .video-wrapper iframe {
+            height: 480px;
         }
 
         .description-section {
@@ -194,8 +212,14 @@
             .game-container {
                 max-width: 100%;
             }
-            iframe {
+            .game-container iframe {
                 height: 80vh;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .video-wrapper iframe {
+                height: 250px; /* На мобильных делаем видео пониже */
             }
         }
     </style>
@@ -227,7 +251,7 @@
         </div>
 
         <div class="sidebar-content">
-            <h3>Top Leaders ✨</h3>
+            <h3>Top Leaders 🏆</h3>
             
             <div class="leader-category">
                 <h4>⭐ Stars</h4>
@@ -286,11 +310,7 @@
 
     <div class="description-section">
         <h2>Welcome to Checkers English Online</h2>
-        <p>
-            Immerse yourself in the strategic world of <strong>Checkers English Online</strong> (also known as <em>Draughts</em>). 
-            This isn't just a quick match it's a test of tactics and foresight where every move counts. 
-            Here, you don't just play; you build a career as a grandmaster.
-        </p>
+        <p>Immerse yourself in the strategic world of Checkers English Online (also known as Draughts). Play, analyze stats, and build your career as a grandmaster.</p>
         
         <h3>Game Features:</h3>
         <ul>
@@ -320,7 +340,16 @@
         </ul>
     </div>
     
-    <div class="description-section" style="margin-top: 20px;">
+    <div class="description-section">
+        <h2>Gameplay Walkthrough</h2>
+        <p>Watch our gameplay video below to see the mechanics in action and discover winning strategies.</p>
+        
+        <div class="video-wrapper">
+            <iframe src="https://gamemonetize.video/index.php?domain=gamemonetize.com&amp;gameid=pir55cwoygvsus9az7d5zyxd6gra48dh&amp;game=undefined&amp;getads=true&amp;color=%236805cc" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+    </div>
+
+    <div class="description-section">
         <h3>Frequently Asked Questions</h3>
         
         <div style="margin-bottom: 15px;">
@@ -338,6 +367,7 @@
             <p style="margin-top: 0;">You start with a base rating. Winning against stronger opponents gives you more points. The leaderboard updates in real-time.</p>
         </div>
     </div>
+
     <footer>
         <p>&copy; 2026 Checkers English Online. All rights reserved.</p>
         <p style="font-size: 11px; color: #444;">
