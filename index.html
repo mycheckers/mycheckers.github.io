@@ -48,7 +48,7 @@
         .main-layout {
             display: flex;
             justify-content: center;
-            align-items: stretch;
+            align-items: stretch; /* Оставить stretch, чтобы боковые блоки растягивались по высоте игры */
             gap: 20px;
             padding: 30px 10px;
             flex-grow: 1;
@@ -75,17 +75,46 @@
             font-size: 16px;
         }
 
-        /* Стили для категорий лидеров */
-        .leader-category {
-            margin-bottom: 20px;
+        /* --- СТИЛИ ДЛЯ ЛЕВОЙ КОЛОНКИ (Особенности игры) --- */
+        .sidebar-content.features .feature-list {
+            margin: 0;
+            padding: 0;
+            list-style: none; /* Очистить список */
         }
-        
-        .leader-category h4 {
+        .sidebar-content.features .feature-list li {
+            margin-bottom: 0;
+            border-bottom: 1px solid var(--accent-purple); /* Добавить фиолетовую линию */
+            padding-bottom: 20px; /* Отступ текста от линии */
+            margin-top: 20px; /* Отступ линии от следующего текста (margin-bottom) */
+        }
+        .sidebar-content.features .feature-list li:first-child {
+            margin-top: 0; /* У первого пункта нет верхнего отступа */
+        }
+        .sidebar-content.features .feature-list li:last-child {
+            border-bottom: none; /* У последнего пункта нет линии */
+            padding-bottom: 0; /* И нет нижнего отступа */
+        }
+
+        /* --- СТИЛИ ДЛЯ ПРАВОЙ КОЛОНКИ (Лидеры) --- */
+        /* Обновление стиля заголовка категории лидера */
+        .sidebar-content.leaders .leader-category h4 {
             margin: 0 0 10px 0;
             color: #e0e0e0;
             font-size: 14px;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid var(--accent-purple); /* Изменить цвет на фиолетовый */
             padding-bottom: 5px;
+        }
+
+        /* Добавление фиолетовых линий между категориями */
+        .sidebar-content.leaders .leader-category {
+            margin-bottom: 30px; /* Уменьшить старый margin-bottom */
+            border-bottom: 1px solid var(--accent-purple); /* Добавить фиолетовую линию после всей категории */
+            padding-bottom: 30px; /* Отступ контента от линии */
+        }
+        .sidebar-content.leaders .leader-category:last-of-type {
+            border-bottom: none; /* У последней категории нет линии */
+            padding-bottom: 0;
+            margin-bottom: 0;
         }
 
         .side-leader {
@@ -106,15 +135,6 @@
         .side-leader-score {
             color: #a78bfa;
             font-weight: bold;
-        }
-        
-        .feature-list {
-            padding-left: 15px;
-            margin: 0;
-        }
-        
-        .feature-list li {
-            margin-bottom: 12px; /* Чуть увеличил отступ между пунктами для читаемости */
         }
 
         .game-container {
@@ -204,7 +224,7 @@
 
     <div class="main-layout">
         
-        <div class="sidebar-content">
+        <div class="sidebar-content features">
             <h3>Game Features</h3>
             <ul class="feature-list">
                 <li><strong>Rating System:</strong> Track progress & fight for top spots.</li>
@@ -222,8 +242,8 @@
             <iframe src="https://html5.gamemonetize.co/pir55cwoygvsus9az7d5zyxd6gra48dh/" allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
         </div>
 
-        <div class="sidebar-content">
-            <h3>Top Leaders 🏆</h3>
+        <div class="sidebar-content leaders">
+            <h3>Top Leaders ✨</h3>
             
             <div class="leader-category">
                 <h4>⭐ Stars</h4>
