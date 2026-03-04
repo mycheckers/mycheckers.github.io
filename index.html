@@ -48,13 +48,12 @@
         .main-layout {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: stretch; /* ИЗМЕНЕНО: Теперь боковые панели растягиваются на всю высоту игры */
             gap: 20px;
             padding: 30px 10px;
             flex-grow: 1;
         }
 
-        /* --- СТИЛИ ДЛЯ НОВЫХ БОКОВЫХ ПАНЕЛЕЙ --- */
         .sidebar-content {
             width: 180px; 
             background-color: var(--panel-color);
@@ -126,11 +125,12 @@
         .description-section {
             background-color: var(--panel-color);
             margin: 0 auto 40px auto;
-            max-width: 1000px;
+            max-width: 960px; /* ИЗМЕНЕНО: Теперь ширина строго совпадает с шириной игры (960px) */
             padding: 30px;
             border-radius: 12px;
             line-height: 1.6;
             color: #bbb;
+            box-sizing: border-box; /* Добавлено, чтобы padding не расширял блок */
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
@@ -170,7 +170,6 @@
             border-top: 1px solid #222;
         }
 
-        /* Прячем боковые панели на экранах меньше 1350px, чтобы не мешали игре */
         @media (max-width: 1350px) {
             .sidebar-content {
                 display: none !important;
