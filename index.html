@@ -8,7 +8,6 @@
     
     <style>
         :root {
-            /* Подфиолеченный фон и панели */
             --bg-color: #15111a;
             --panel-color: #1e1926;
             --accent-purple: #6200ea;
@@ -144,11 +143,11 @@
             height: 720px;
         }
 
-        /* --- СТИЛИ ДЛЯ ВИДЕО (ИСПРАВЛЕННЫЕ) --- */
+        /* --- СТИЛИ ДЛЯ ВИДЕО (РОДНЫЕ ПРОПОРЦИИ) --- */
         .video-wrapper {
             margin-top: 25px;
-            width: 100%; /* Растягиваем на всю ширину внутри блока */
-            aspect-ratio: 16 / 9; /* Сохраняем пропорции, чтобы не было черных полос */
+            width: 100%; /* На всю ширину текстового блока */
+            height: 480px; /* Строгая высота, как требует GameMonetize */
             border-radius: 8px;
             overflow: hidden;
             background-color: #000;
@@ -219,6 +218,12 @@
             }
             .game-container iframe {
                 height: 80vh;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .video-wrapper {
+                height: 300px; /* Адаптация под мобильные экраны */
             }
         }
     </style>
