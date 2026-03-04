@@ -48,7 +48,7 @@
         .main-layout {
             display: flex;
             justify-content: center;
-            align-items: stretch; /* ИЗМЕНЕНО: Теперь боковые панели растягиваются на всю высоту игры */
+            align-items: stretch;
             gap: 20px;
             padding: 30px 10px;
             flex-grow: 1;
@@ -75,6 +75,7 @@
             font-size: 16px;
         }
 
+        /* Новые стили для категорий лидеров */
         .leader-category {
             margin-bottom: 20px;
         }
@@ -137,12 +138,12 @@
         .description-section {
             background-color: var(--panel-color);
             margin: 0 auto 40px auto;
-            max-width: 960px; /* ИЗМЕНЕНО: Теперь ширина строго совпадает с шириной игры (960px) */
+            max-width: 960px; 
             padding: 30px;
             border-radius: 12px;
             line-height: 1.6;
             color: #bbb;
-            box-sizing: border-box; /* Добавлено, чтобы padding не расширял блок */
+            box-sizing: border-box; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
@@ -217,7 +218,7 @@
             <iframe src="https://html5.gamemonetize.co/pir55cwoygvsus9az7d5zyxd6gra48dh/" allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
         </div>
 
-<div class="sidebar-content">
+        <div class="sidebar-content">
             <h3>Top Leaders ✨</h3>
             
             <div class="leader-category">
@@ -272,6 +273,8 @@
                 Play online to climb the leaderboards!
             </p>
         </div>
+
+    </div>
 
     <div class="description-section">
         <h2>Welcome to Checkers English Online</h2>
@@ -337,4 +340,3 @@
     </footer>
 </body>
 </html>
-
